@@ -3,71 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Installation nouveaux postes en salle de réveil</title>
+  <title>Clément Marescaux — Portfolio BTS SIO</title>
   <style>
     body { font-family: system-ui, Arial, sans-serif; max-width: 760px; margin: 0 auto;
            padding: 24px 16px 64px; line-height: 1.6; color: #1a1a1a; }
-    a.retour { color: #0F766E; text-decoration: none; font-weight: 600; }
-    h1 { font-size: 1.7rem; margin: 18px 0 4px; }
-    .meta { color: #555; margin: 0 0 24px; font-size: .95rem; }
-    h2 { margin-top: 32px; font-size: 1.15rem; color: #0F766E;
-         border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-    .competences { margin-top: 36px; background: #F4F7F6; border-left: 4px solid #0F766E;
-                   padding: 12px 16px; }
-    .competences ul { margin: 6px 0 0; padding-left: 20px; }
+    header { border-bottom: 3px solid #0F766E; padding-bottom: 12px; margin-bottom: 8px; }
+    h1 { margin: 0 0 4px; font-size: 1.9rem; }
+    .sous-titre { color: #555; margin: 0; }
+    nav a { margin-right: 14px; color: #0F766E; text-decoration: none; font-weight: 600; }
+    nav a:hover { text-decoration: underline; }
+    h2 { margin-top: 40px; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
+    footer { margin-top: 48px; color: #777; font-size: .9rem; border-top: 1px solid #ddd; padding-top: 12px; }
   </style>
 </head>
 <body>
 
-  <p><a class="retour" href="index.html">&larr; Retour au portfolio</a></p>
+  <header>
+    <h1>Clément Marescaux</h1>
+    <p class="sous-titre">BTS SIO, option SISR — promotion 2026-2028</p>
+  </header>
 
-  <h1>Déploiement et sécurisation de postes de travail en salle de réveil.</h1>
-  <p class="meta">Centre hospitalier de taille moyenne — juin 2025 — stage fin première année licence informatique</p>
+  <nav>
+    <a href="#parcours">Parcours</a>
+    <a href="#competences">Compétences</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#veille">Veille</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <h2>Contexte</h2>
-  <p>Au sein de la Direction des Systèmes d'Information d'un centre hospitalier, j'ai été chargé du renouvellement du parc informatique du bloc opératoire. 
-    L'intervention visait spécifiquement la salle de réveil d'un bloc opératoire pour équiper les soignants anesthésistes et infirmiers de postes fiables.</p>
+  <h2 id="parcours">Parcours</h2>
+  <p>Après mon bac, j'ai d'abord exploré le domaine de la santé (médecine, puis école d'infirmiers). J'y ai forgé une grande rigueur et le sens des responsabilités, avant de réaliser que mon véritable avenir professionnel était ailleurs.
 
-  <h2>Problématique</h2>
-  <p>Depuis plusieurs mois, les 5 postes de la salle de réveil présentaient des lenteurs majeures et des déconnexions régulières au réseau. 
-    Cela pénalisait fortement le personnel soignant, qui a besoin d'un accès instantané aux constantes et au dossier informatisé des patients en sortie d'opération, créant ainsi une situation à risque.</p>
+Animé par ma passion pour l'informatique, je me suis dirigé vers une licence dans ce domaine. Cette étape a confirmé mon attrait pour la tech, mais je recherchais une approche plus concrète et opérationnelle.
 
-  <h2>Démarche</h2>
-  <p>Avant l'intervention, j'ai demandé au technicien s'il était possible de préparer les postes directement dans la salle de réveil installation Windows, logiciels. 
-    Nous avons écarté cette option car le temps de présence dans une zone à empoussièrement contrôlé (secteur stérile) doit être minimal pour des raisons d'hygiène, et cela aurait trop gêné le travail des soignants.
-    J'ai donc aidé le technicien à préparer les postes en atelier : descente de l'image système sur les nouvelles machines et configuration des logiciels métiers médicaux.
-    Nous avons planifié l'intervention sur place lors d'une période de faible activité au bloc.
-    Sur place, j'ai assisté le technicien pour l'échange physique des machines, le raccordement au réseau, et j'ai géré la résolution des derniers bugs (notamment la reconnexion des imprimantes locales et les tests d'ouverture de session).</p>
+J'ai donc intégré le BTS SIO option SISR, où j'ai la certitude d'avoir enfin trouvé ma voie. Fort de ce parcours atypique et d'une grande capacité d'adaptation, j'ai aujourd'hui soif d'apprendre et de monter en compétences sur de nouveaux domaines exigeants et en constante évolution, tout particulièrement l'architecture cloud et la cybersécurité.</p>
 
-  <h2>Outils mobilisés</h2>
+  <h2 id="competences">Compétences</h2>
   <ul>
-    <li>Serveur de déploiement pour l'image système</li>
-    <li>Active Directory pour la Vérification de la remontée des postes dans le domaine</li>
-    <li>Micro-ordinateurs compacts adaptés au milieu médical</li>
+    <li>Gérer le patrimoine informatique — <em>preuve à relier</em></li>
+    <li>Répondre aux incidents et aux demandes d'assistance — <em>preuve à relier</em></li>
+    <li>Développer la présence en ligne de l'organisation — <em>preuve à relier</em></li>
+    <li>Travailler en mode projet — <em>preuve à relier</em></li>
+    <li>Mettre à disposition un service informatique — <em>preuve à relier</em></li>
+    <li>Organiser son développement professionnel — <em>preuve à relier</em></li>
   </ul>
 
-  <h2>Précautions prises</h2>
-  <p>Sanitaires : Habillage spécifique obligatoire ( charlotte, masque, surchaussures) et désinfection de tout le matériel informatique au bionettoyant avant de franchir les portes du bloc.
-     Techniques : Sauvegarde préalable des favoris des anciens postes et vérification en binôme du bon brassage des prises réseau sur le VLAN médical.
-</p>
+  <h2 id="realisations">Réalisations</h2>
+  <ul>
+    <li><a href="situation-01.html">Situation n° 1 —Déploiement et sécurisation de postes de travail en Salle de réveil</a></li>
+    <li><a href="situation-02.html">Situation n° 2 — TP Camille</a></li>
+  </ul>
 
-  <h2>Résultats</h2>
-  <p>Le remplacement des 5 postes s'est fait avec 0 minute d'interruption dans la surveillance des patients. 
-    Le temps de démarrage et d'accès aux logiciels de soins est passé de plus de 4 minutes à moins de 20 secondes.</p>
+  <h2 id="veille">Veille</h2>
+  <ul>
+    <li>Source 1 — ce que je suis et ce que j'en retire</li>
+    <li>Source 2 — …</li>
+    <li>Source 3 — …</li>
+  </ul>
 
-  <h2>Bilan personnel</h2>
-  <p>J'ai appris qu'en milieu critique, 80 % du travail d'installation se fait en amont, à l'atelier. Mon expérience passée dans le domaine de la santé m'a permis d'être immédiatement à l'aise avec les protocoles d'hygiène stricts du bloc et de comprendre l'urgence des soignants.
-    Si c'était à refaire, j'anticiperais davantage la gestion du cable management lors de l'installation, car le moindre fil qui dépasse peut entraver le passage d'un brancard ou d'un chariot de soins.
-</p>
+  <h2 id="contact">Contact</h2>
+  <p>Clemmentmarescaux@outlook.fr</p>
 
-  <div class="competences">
-    <strong>Compétences mobilisées</strong>
-    <ul>
-      <li>Gérer le patrimoine informatique</li>
-      <li>Répondre aux incidents et aux demandes d’assistance</li>
-      <li>Travailler en collaboration</li>
-    </ul>
-  </div>
+  <footer>
+    Portfolio réalisé dans le cadre du BTS SIO — dernière mise à jour : 02/10/2026
+  </footer>
 
 </body>
 </html>
