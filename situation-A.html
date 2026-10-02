@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Installation nouveaux postes en salle de réveil</title>
+  <title>Remplacement d'un switch d'étage saturé</title>
   <style>
     body { font-family: system-ui, Arial, sans-serif; max-width: 760px; margin: 0 auto;
            padding: 24px 16px 64px; line-height: 1.6; color: #1a1a1a; }
@@ -21,51 +21,48 @@
 
   <p><a class="retour" href="situation-02.html">&larr; Retour au portfolio</a></p>
 
-  <h1>Déploiement et sécurisation de postes de travail en salle de réveil.</h1>
-  <p class="meta">Centre hospitalier de taille moyenne — juin 2025 — stage fin première année licence informatique</p>
+  <h1>Remplacement d'un switch d'étage saturé</h1>
+  <p class="meta">PME de métallurgie, 45 postes, site principal — mars 2026 — option SISR</p>
 
   <h2>Contexte</h2>
-  <p>Au sein de la Direction des Systèmes d'Information d'un centre hospitalier, j'ai été chargé du renouvellement du parc informatique du bloc opératoire. 
-    L'intervention visait spécifiquement la salle de réveil d'un bloc opératoire pour équiper les soignants anesthésistes et infirmiers de postes fiables.</p>
+  <p>Le site principal compte 45 postes, dont 12 dans l'atelier, reliés à un switch d'étage installé en 2016. Les postes de l'atelier servent aux plans de fabrication et à la saisie des temps.
+</p>
 
   <h2>Problématique</h2>
-  <p>Depuis plusieurs mois, les 5 postes de la salle de réveil présentaient des lenteurs majeures et des déconnexions régulières au réseau. 
-    Cela pénalisait fortement le personnel soignant, qui a besoin d'un accès instantané aux constantes et au dossier informatisé des patients en sortie d'opération, créant ainsi une situation à risque.</p>
+  <p>Depuis trois semaines, les 12 postes de l'atelier subissaient des coupures réseau de quelques secondes, plusieurs fois par jour. La sauvegarde du serveur de fichiers, lancée à 12 h, durait 42 minutes au lieu des 6 minutes habituelles et terminait parfois en erreur.</p>
 
   <h2>Démarche</h2>
-  <p>Avant l'intervention, j'ai demandé au technicien s'il était possible de préparer les postes directement dans la salle de réveil installation Windows, logiciels. 
-    Nous avons écarté cette option car le temps de présence dans une zone à empoussièrement contrôlé (secteur stérile) doit être minimal pour des raisons d'hygiène, et cela aurait trop gêné le travail des soignants.
-    J'ai donc aidé le technicien à préparer les postes en atelier : descente de l'image système sur les nouvelles machines et configuration des logiciels métiers médicaux.
-    Nous avons planifié l'intervention sur place lors d'une période de faible activité au bloc.
-    Sur place, j'ai assisté le technicien pour l'échange physique des machines, le raccordement au réseau, et j'ai géré la résolution des derniers bugs (notamment la reconnexion des imprimantes locales et les tests d'ouverture de session).</p>
+  <p>J'ai d'abord relevé les débits depuis un poste de l'atelier : 8 Mo/s en copie vers le serveur, contre 74 Mo/s depuis un poste du bureau. Trois hypothèses : le câblage, la carte réseau des postes, le switch.
+
+J'ai écarté le câblage : les liens ont été certifiés en 2023 et un test au testeur de câble sur trois prises n'a rien montré. J'ai écarté la carte réseau : le problème touchait les 12 postes, pas un seul.
+
+Restait le switch, un modèle 16 ports à 100 Mb/s dont les compteurs affichaient des erreurs de collision. Je l'ai remplacé par un switch administrable gigabit prêté par le fournisseur, pour valider l'hypothèse avant tout achat.
+</p>
 
   <h2>Outils mobilisés</h2>
   <ul>
-    <li>Serveur de déploiement pour l'image système</li>
-    <li>Active Directory pour la Vérification de la remontée des postes dans le domaine</li>
-    <li>Micro-ordinateurs compacts adaptés au milieu médical</li>
+    <li>Switch administrable 16 ports gigabit (modèle de prêt, puis modèle acheté)</li>
+    <li>Testeur de câble RJ45</li>
+    <li>Wireshark 4.2 pour observer les retransmissions</li>
+    <li>GLPI 10.0 pour le suivi du ticket et la mise à jour de l'inventaire</li>
   </ul>
 
   <h2>Précautions prises</h2>
-  <p>Sanitaires : Habillage spécifique obligatoire ( charlotte, masque, surchaussures) et désinfection de tout le matériel informatique au bionettoyant avant de franchir les portes du bloc.
-     Techniques : Sauvegarde préalable des favoris des anciens postes et vérification en binôme du bon brassage des prises réseau sur le VLAN médical.
-</p>
+  <p>J'ai sauvegardé la configuration de l'ancien switch, étiqueté les 16 câbles avant de les débrancher, et programmé l'intervention entre 12 h 30 et 13 h 15, hors production. J'ai prévenu le chef d'atelier la veille.</p>
 
   <h2>Résultats</h2>
   <p>Le remplacement des 5 postes s'est fait avec 0 minute d'interruption dans la surveillance des patients. 
     Le temps de démarrage et d'accès aux logiciels de soins est passé de plus de 4 minutes à moins de 20 secondes.</p>
 
   <h2>Bilan personnel</h2>
-  <p>J'ai appris qu'en milieu critique, 80 % du travail d'installation se fait en amont, à l'atelier. Mon expérience passée dans le domaine de la santé m'a permis d'être immédiatement à l'aise avec les protocoles d'hygiène stricts du bloc et de comprendre l'urgence des soignants.
-    Si c'était à refaire, j'anticiperais davantage la gestion du cable management lors de l'installation, car le moindre fil qui dépasse peut entraver le passage d'un brancard ou d'un chariot de soins.
+  <p>Le débit de copie est passé de 8 Mo/s à 74 Mo/s. La sauvegarde est redescendue à 6 minutes. Aucune coupure signalée dans les trois semaines qui ont suivi. L'inventaire GLPI a été mis à jour le jour même.
 </p>
 
   <div class="competences">
     <strong>Compétences mobilisées</strong>
     <ul>
       <li>Gérer le patrimoine informatique</li>
-      <li>Répondre aux incidents et aux demandes d’assistance</li>
-      <li>Travailler en collaboration</li>
+      <li>répondre aux incidents et aux demandes d'assistance.</li>
     </ul>
   </div>
 
